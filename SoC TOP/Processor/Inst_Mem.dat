@@ -1,0 +1,31 @@
+// the following is to test the RISC-V
+@0
+FFC4A303  // Address 0x0000: lw x6, -4(x9)
+@1
+0064A423  // Address 0x0004: sw x6, 8(x9)
+@2
+0062E233  // Address 0x0008: or x4, x5, x6
+@3
+00420863  // Address 0x000C: beq x4, x4, 32 (this will incerement the pc by 16 which incerements the address of memory by 4)
+
+
+@7         //address 0x001C : jal x10 , 128 (this will incerement the PC by 64 which will inceremnt the memory address by 16)
+0400056F
+
+
+
+
+
+@17       // Address 0x0080: addi x1, x0, 8 
+00800093 
+
+
+// the following is to test the SoC
+@18
+4A44A823 // Address 0x0084: sw x4, 1200(x9)  (this has an offset of 1204 to test the SoC by writing the value in x4 (15) into the UART)
+@19
+3E64A923 // Address 0x0088: sw x6, 1010(x9) (to test that no data will be written in data memory)
+@1A
+4B04A083 // Address 0x0088: lw x1, 1200(x9) (this instruction will get the value (F) we loaded to the UART to test the SoC by reading the same value)
+@1B
+3F24A383 // Address 0x008C: lw x7, 1010(x9) 
