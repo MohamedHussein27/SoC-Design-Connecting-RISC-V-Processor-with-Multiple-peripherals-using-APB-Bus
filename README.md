@@ -61,7 +61,7 @@ In this section, we verify the functionality of the SoC design by simulating var
 
 ### First Scenario
 
-_The first 6 instructions are to verify RISC-V Processor, from the 7th instruction we will start to verify our SoC
+- The first 6 instructions are to verify RISC-V Processor, from the 7th instruction we will start to verify our SoC:
 ![1st_1](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing%2F1st_1.png)
 
 ### Second Scenario
