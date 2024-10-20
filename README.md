@@ -86,3 +86,12 @@ Additionally, to streamline the testing process, I created a **do file** for the
 
 ## Vivado
 *Image placeholder for Vivado simulation and synthesis results*
+
+---
+
+### New Releases:
+We are excited to announce that new peripherals will be added to this System on Chip (SoC) design, expanding its functionality even further. In future updates:
+- Additional peripherals will be connected to the system, providing more versatility.
+- The RISC-V processor will be enhanced and **pipelined**, improving performance and efficiency.
+
+Stay tuned for updates and improvements in the next release!
