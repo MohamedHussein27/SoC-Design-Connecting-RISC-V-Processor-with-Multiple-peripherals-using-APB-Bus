@@ -61,7 +61,7 @@ In this section, we verify the functionality of the SoC design by simulating var
 
 ### First Scenario
 _The first 6 instructions are to verify RISC-V Processor, from the 7th instruction we will start to verify our SoC
-[
+![1st_full](https://github.com/MohamedHussein27/UART-With-FIFOs/blob/main/Structure/1st_full.png)
 
 ### Second Scenario
 _Description of the second scenario goes here..._
