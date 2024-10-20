@@ -60,8 +60,9 @@ This project showcases a Verilog implementation of an SoC design where the **RIS
 In this section, we verify the functionality of the SoC design by simulating various test scenarios that showcase the interaction between the RISC-V processor, APB peripherals, and UART. The scenarios include testing data transmission, error handling, and performance under different conditions.
 
 ### First Scenario
+
 _The first 6 instructions are to verify RISC-V Processor, from the 7th instruction we will start to verify our SoC
-![1st_full](https://github.com/MohamedHussein27/UART-With-FIFOs/blob/main/Structure/1st_full.png)
+![1st_1](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing%2F1st_1.png)
 
 ### Second Scenario
 _Description of the second scenario goes here..._
