@@ -64,7 +64,8 @@ In this section, we verify the functionality of the SoC design by simulating var
 - The first 6 instructions are to verify RISC-V Processor, from the 7th instruction we will start to verify our SoC:
 ![1st_1](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing%2F1st_1.png)
 
-- Now we carrying out the instruction: sw x4, 1200(x9) , so we will store x4 value (0Xf) in Tx FIFO in UART Peripheral, notice that the instruction is freezed due to our stop signal which stops the PC counter while using one of the peripherals: [1st_2](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing%2F1st_2.png)
+- Now we carrying out the instruction: sw x4, 1200(x9) , so we will store x4 value (0Xf) in Tx FIFO in UART Peripheral, notice that the instruction is freezed due to our stop signal which stops the PC counter while using one of the peripherals:
+![1st_2](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing%2F1st_2.png)
 
 ### Second Scenario
 _Description of the second scenario goes here..._
