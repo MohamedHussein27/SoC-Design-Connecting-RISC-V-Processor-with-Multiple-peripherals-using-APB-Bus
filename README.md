@@ -8,7 +8,7 @@ This project showcases a Verilog implementation of an SoC design where the **RIS
 ---
 
 ## SoC Structure
-*Image placeholder for SoC structure*
+![Architecture](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing/SoC%20Archeticture.png)
 
 ### Work Idea:
 - The **RISC APB Wrapper** takes the instruction from the **RISC-V processor** and checks if it is a load word (lw) or store word (sw) instruction with an offset greater than 1000. If so, it stops the processor by freezing the PC counter and routes the instruction through one of the peripherals (e.g., UART).
@@ -115,7 +115,15 @@ Additionally, to streamline the testing process, I created a **do file** for the
 ---
 
 ## Vivado
-*Image placeholder for Vivado simulation and synthesis results*
+- Elaboration:
+![Elaboration](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing/Elaboration.png)
+
+- Synthesis:
+![Synthesis](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing/Synthesis.png)
+
+- Implementation:
+
+![Implementation](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing/Implementation.png)
 
 ---
 
@@ -125,3 +133,10 @@ We are excited to announce that new peripherals will be added to this System on 
 - The RISC-V processor will be enhanced and **pipelined**, improving performance and efficiency.
 
 Stay tuned for updates and improvements in the next release!
+
+---
+
+## Contact Me!
+- [Email](mailto:Mohamed_Hussein2100924@outlook.com)
+- [WhatsApp](https://wa.me/+2001097685797)
+- [LinkedIn](https://www.linkedin.com/in/mohamed-hussein-274337231)
