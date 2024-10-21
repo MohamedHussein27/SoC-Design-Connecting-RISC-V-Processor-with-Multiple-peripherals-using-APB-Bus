@@ -105,6 +105,11 @@ In this section, we verify the functionality of the SoC design by simulating var
 - Rx FIFO has the new value and it’s shown on data_out signal from the SoC
 ![4th_2](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing/4th_2.png)
 
+
+### Full Wave:
+![full_1](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing/Full_1.png)
+![full_2](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing/full_2.png)
+
 ---
 
 ## Explanation & Speed
