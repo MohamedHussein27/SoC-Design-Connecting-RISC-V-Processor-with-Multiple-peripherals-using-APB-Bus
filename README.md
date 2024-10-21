@@ -62,23 +62,48 @@ In this section, we verify the functionality of the SoC design by simulating var
 ### First Scenario
 
 - The first 6 instructions are to verify RISC-V Processor, from the 7th instruction we will start to verify our SoC:
-![1st_1](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing%2F1st_1.png)
+![instruction](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing/RISC_Instr.png)
 
 - Now we carrying out the instruction: sw x4, 1200(x9) , so we will store x4 value (0Xf) in Tx FIFO in UART Peripheral, notice that the instruction is freezed due to our stop signal which stops the PC counter while using one of the peripherals:
+![1st_1](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing%2F1st_1.png)
+
+- After a certain time due to our baud rate, Tx FIFO now has the value 0xF
 ![1st_2](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing%2F1st_2.png)
 
+- At this time the Data Memory at address (1204/4 = 301) has nothing written into
+![1st_3](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing/1st_3.png)
+
+
 ### Second Scenario
-_Description of the second scenario goes here..._
+
+- Immediately after that the instruction is changed to be: sw x6, 1010(x9), instruction to store the value (0x9) in Tx FIFO, this shows our smooth implementation as the instructions are carried out one after another without a delay
+![2nd_1](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing/2nd_1.png)
+
+- At the next baud clock positive edge the Tx FIFO now has the two values 
+![2nd_2](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing/2nd_2.png)
+
+- At this time the address (1014/4 = 253) in Data Memory is empty 
+![2nd_3](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing/3rd_1.png)
 
 ### Third Scenario
-_Description of the third scenario goes here..._
 
----
+- Now the instruction is changing to be: lw x1, 1200(x9), we will first wait the data to be serialized from Tx FIFO to Rx FIFO, then it will be out from data_out signal
+![3rd_1](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing/3rd_1.png)
 
-## General Mechanism
-- _First bullet point_
-- _Second bullet point_
-- _Third bullet point_
+- After a long time of serializing data, now the Rx FIFO has the value 0xF
+![3rd_2](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing/3rd_2.png)
+
+- data is now out from the SoC
+![3rd_3](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing/3rd_3.png)
+
+
+### Fourth Scenario
+
+- instruction is changining again to carry out the last instruction in our scenario (lw x7, 1010(x9)) 
+![4th_1](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing/4th_1.png)
+
+- Rx FIFO has the new value and it’s shown on data_out signal from the SoC
+![4th_2](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/Structure%20and%20Testing/4th_2.png)
 
 ---
 
