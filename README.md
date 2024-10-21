@@ -28,19 +28,50 @@ This project showcases a Verilog implementation of an SoC design where the **RIS
 
 ---
 
-## Signals
+## Primary Signals
 
-| **Signal**         | **Direction** | **Description**                                                                                   |
-|--------------------|---------------|---------------------------------------------------------------------------------------------------|
-| **Clock**          | Input         | System clock driving the entire SoC.                                                              |
-| **Reset**          | Input         | Resets the SoC logic and peripherals.                                                             |
-| **APB Address**    | Input         | Address sent by the RISC-V processor for APB transactions.                                         |
-| **APB Data**       | Input/Output  | Data transferred between the RISC-V processor and peripherals via the APB bus.                     |
-| **UART TXD**       | Output        | Transmit data output for UART communication.                                                      |
-| **UART RXD**       | Input         | Receive data input for UART communication.                                                        |
-| **Tx FIFO Full**   | Output        | Indicates that the transmit FIFO is full and cannot accept more data.                             |
-| **Rx FIFO Full**   | Output        | Indicates that the receive FIFO is full and data should be read.                                  |
-| **Error Signal**   | Output        | Signals errors such as overrun or framing errors.                                                 |
+| **Signal**           | **Direction** | **Description**                                                                                               |
+|----------------------|---------------|---------------------------------------------------------------------------------------------------------------|
+| **clk**              | Input         | System clock driving the entire SoC.                                                                          |
+| **rst**              | Input         | Resets the SoC logic and peripherals.                                                                         |
+| **data_out**         | Output        | Parallel output data from the UART module, increased by one bit (9 bits).                                      |
+| **OE**               | Output        | Output error signal for Overrun Error (OE) from UART module.                                                   |
+| **BE**               | Output        | Output error signal for Break Error (BE) from UART module.                                                     |
+| **FE**               | Output        | Output error signal for Framing Error (FE) from UART module.                                                   |
+| **cancel_data_memory** | Wire        | Signal to cancel using data memory in case of `lw` or `sw` in a peripheral.                                    |
+| **stop**             | Wire          | Stops the RISC-V PC from incrementing until data is sent or received using the APB bus.                        |
+| **Instr**            | Wire          | 32-bit instruction from RISC-V processor.                                                                     |
+| **Reg1_out**         | Wire          | 32-bit output wire from RD1 in the register file.                                                             |
+| **Reg2_out**         | Wire          | 32-bit output wire from RD2 in the register file.                                                             |
+| **READY**            | Wire          | Signal to indicate readiness (high when back to the normal RISC-V cycle).                                      |
+| **SLVERR**           | Wire          | Indicates an error signal in the APB transaction.                                                             |
+| **transfer**         | Wire          | Signal to start using the APB master.                                                                         |
+| **SWRITE**           | Wire          | Write signal for the APB master to indicate a write transaction.                                               |
+| **SADDR**            | Wire          | 32-bit address for the APB transaction.                                                                       |
+| **SWDATA**           | Wire          | 32-bit write data for the APB transaction.                                                                    |
+| **SSTRB**            | Wire          | 4-bit write strobes for the APB transaction (indicates which bytes are active).                                |
+| **PSEL**             | Wire          | Peripheral select signal to choose the target peripheral in the APB transaction.                               |
+| **PENABLE**          | Wire          | Enable signal for the APB transaction (indicates the second phase of the APB protocol).                        |
+| **PWRITE**           | Wire          | Write signal to indicate whether the current APB transaction is a write.                                       |
+| **PADDR**            | Wire          | 32-bit address sent to the peripheral in the APB transaction.                                                 |
+| **PWDATA**           | Wire          | 32-bit write data sent to the peripheral in the APB transaction.                                              |
+| **PSTRB**            | Wire          | 4-bit write strobes sent to the peripheral in the APB transaction.                                            |
+| **PREADY**           | Wire          | Ready signal from the peripheral (high when the peripheral is ready to complete the transaction).              |
+| **PSLVERR**          | Wire          | Error signal from the peripheral (indicates if there is a failure in the transaction).                         |
+| **PREADY_W**         | Wire          | Ready signal for write transactions from the UART peripheral.                                                  |
+| **PREADY_R**         | Wire          | Ready signal for read transactions from the UART peripheral.                                                   |
+| **PUARTERR**         | Wire          | Error signal from the UART peripheral.                                                                        |
+| **Rx_ready_APB**      | Wire         | Flag to indicate that the Rx FIFO is ready for receiving data from the Tx FIFO in the UART peripheral.         |
+| **start_Tx**         | Wire          | Start signal for transmission (active low), controlled by `Rx_ready_APB`.                                      |
+| **write_uart**       | Wire          | Write signal for the UART peripheral.                                                                         |
+| **read_uart**        | Wire          | Read signal for the UART peripheral.                                                                          |
+| **parity_sel**       | Wire          | Parity selection signal for the UART module.                                                                  |
+| **baud_selector**    | Wire          | 2-bit signal for selecting the baud rate of the UART peripheral.                                              |
+| **data_out_to_uart** | Wire          | 8-bit data output to the UART peripheral for transmission.                                                    |
+| **new_instruction_Tx** | Wire       | Flag indicating that the upcoming instruction is new for the Tx FIFO, used to reset the serial counter.        |
+| **new_instruction_Rx** | Wire       | Flag indicating that the upcoming instruction is new for the Rx FIFO, used to reset the serial counter.        |
+
+> **Note:** these signals are in [SoC.v](https://github.com/MohamedHussein27/SoC-Design-Connecting-RISC-V-Processor-with-Multiple-peripherals-using-APB-Bus/blob/main/SoC%20TOP/SoC.v) file
 
 ---
 
