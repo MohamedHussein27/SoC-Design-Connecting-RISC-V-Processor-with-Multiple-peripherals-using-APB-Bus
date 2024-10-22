@@ -22,7 +22,7 @@ This project showcases a Verilog implementation of an SoC design where the **RIS
 
 > **Note:** If you want a deeper look into each component separately, check the following:
 > - [RISC-V Processor](https://github.com/MohamedHussein27/RISC-V-Single-Cycle-Implementation)
-> - [APB Protocol](https://github.com/MohamedHussein27/AMBA-APB4)
+> - [APB Protocol](https://github.com/MohamedHussein27/AMPA_APB4_Protocol)
 > - [UART Peripheral](https://github.com/MohamedHussein27/UART-With-FIFOs)
 
 
