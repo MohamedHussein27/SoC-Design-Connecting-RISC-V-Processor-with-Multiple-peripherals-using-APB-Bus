@@ -21,9 +21,9 @@ This project showcases a Verilog implementation of an SoC design where the **RIS
 - The **APB Decoder** also converts the APB signals to peripheral-specific signals and converts the peripheral signals (e.g., **Ready** signal) back to APB signals to be sent to the APB Master.
 
 > **Note:** If you want a deeper look into each component separately, check the following:
-> - [RISC-V Processor](#) *(https://github.com/MohamedHussein27/UART-With-FIFOs)*
-> - [APB Protocol](#) *(https://github.com/MohamedHussein27/AMBA-APB4)*
-> - [UART Peripheral](#) *(https://github.com/MohamedHussein27/UART-With-FIFOs)*
+> - [RISC-V Processor](https://github.com/MohamedHussein27/UART-With-FIFOs)
+> - [APB Protocol](https://github.com/MohamedHussein27/AMBA-APB4)
+> - [UART Peripheral](https://github.com/MohamedHussein27/UART-With-FIFOs)
 
 
 ---
